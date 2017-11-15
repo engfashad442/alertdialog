@@ -1,0 +1,35 @@
+package com.example.shuaibfawole.activitylistener;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.os.Bundle;
+
+/**
+ * Created by shuaib.fawole on 11/15/2017.
+ */
+procedure to create alert dialog in android
+create a class that extends DialogFragment
+Overrid the onCreateDialog method
+create the instannce of AlertDialog.builder builder = new AlertDailog.Builder(getActivity);
+note the object of the alter box does the all stuff for us
+ builder.setMessage("") this displays the message that will appear on the dialog box
+and with of chaining , we call setPositiveButton  and setNegativeButton on the builder object
+public class AlertDialogWindow extends DialogFragment {
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
+        builder.setMessage("Did you want to Proceed?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        return super.onCreateDialog(savedInstanceState);
+    }
+}
